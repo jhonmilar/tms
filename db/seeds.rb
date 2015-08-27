@@ -19,9 +19,18 @@ super_admins = []
 super_admins << User.create!(:email => 'rajesh.rajsrv@gmail.com', :password => 'super_admin123$', :password_confirmation => 'super_admin123$')
 super_admins << User.create!(:email => 'ghoshsabyasachi0@gmail.com', :password => 'super_admin123$', :password_confirmation => 'super_admin123$')
 
-#Associations has_many Roles
+#Associations has_many Roles and Users
 s_role = Role.find_by_name("SuperAdmin")
 drg_org = Organization.find_by_name("DRG")
 super_admins.each do |s|
   UserRole.create! user_id: s.id, role_id: s_role.id, sub_organization_id: drg_org.id
 end
+
+
+# #Routes
+# sub_orga = SubOrganization.limit(3)
+# points = ["HSR", "Kundanehalli", "ITPL"]
+# points.each do |route|
+#   Route.create(name: route, sub_organization_id: sub_orga[points.index(route)].id)
+# end
+
