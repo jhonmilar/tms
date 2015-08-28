@@ -16,6 +16,7 @@
 !/log/.keep
 /tmp
 /log/*.log
+/db/schema.rb
 .DS_Store
 
 

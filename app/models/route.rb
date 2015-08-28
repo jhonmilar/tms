@@ -5,4 +5,5 @@ class Route < ActiveRecord::Base
   belongs_to :sub_organization
   has_many :user_routes
   has_many :users, through: :user_routes
+  has_one :cab
 end
