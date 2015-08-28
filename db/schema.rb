@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828114821) do
+ActiveRecord::Schema.define(version: 20150828121557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cab_feedbacks", force: :cascade do |t|
+    t.integer  "cab_id"
+    t.integer  "user_id"
+    t.text     "feedback_message"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "cabs", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +59,22 @@ ActiveRecord::Schema.define(version: 20150828114821) do
     t.string   "domain_name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "user_addresses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "address3"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "postalCode"
+    t.string   "pickup_address"
+    t.float    "pickup_lat"
+    t.float    "pickup_long"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "user_roles", force: :cascade do |t|
