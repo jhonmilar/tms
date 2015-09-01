@@ -30,7 +30,7 @@ end
 # #Routes
 # sub_orga = SubOrganization.limit(3)
 # points = ["HSR", "Kundanehalli", "ITPL"]
-# points.each do |route|
-#   Route.create(name: route, sub_organization_id: sub_orga[points.index(route)].id)
+# points.each do |routes|
+#   Route.create(name: routes, sub_organization_id: sub_orga[points.index(routes)].id)
 # end
 

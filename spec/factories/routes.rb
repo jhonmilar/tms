@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :route do
+  factory :routes do
     
   end
 

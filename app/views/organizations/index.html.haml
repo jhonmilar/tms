@@ -1,0 +1,15 @@
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th URL
+  %tbody
+    - @organizations.each do |org|
+      %tr
+        %td
+          = org.name
+        %td
+          = org.url
+
+
+= link_to "Create new Organization", new_organization_path
