@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150828121557) do
     t.string   "registration_no"
     t.integer  "total_capacity"
     t.integer  "user_id"
-    t.integer  "root_id"
+    t.integer  "route_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

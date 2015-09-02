@@ -5,7 +5,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-
+    @organization = find_organisation(params[:id])
   end
 
   def new
@@ -22,15 +22,17 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
-
+    @organization = find_organisation(params[:id])
   end
 
   def update
-
+    find_organisation(params[:id]).tap {|organisation| organisation.update!(organization_params)}
+    redirect_to organizations_path
   end
 
-  def delete
-
+  def destroy
+    find_organisation(params[:id]).tap {|organisation| organisation.destroy }
+    redirect_to organizations_path
   end
 
   private
@@ -39,4 +41,7 @@ class OrganizationsController < ApplicationController
     params.require(:organization).permit(:name, :url)
   end
 
+  def find_organisation(id)
+    Organization.find(id)
+  end
 end

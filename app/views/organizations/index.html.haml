@@ -10,6 +10,9 @@
           = org.name
         %td
           = org.url
-
+        %td
+          = link_to "Edit", edit_organization_path(org.id)
+        %td
+          = link_to "Delete", organization_path(org.id), :method => :delete
 
 = link_to "Create new Organization", new_organization_path
