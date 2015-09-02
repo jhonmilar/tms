@@ -1,9 +1,7 @@
-= form_for @organization, html: {class: "nifty_form", :role => "form"} do |f|
-  .form-group
-    %label{:for => "organization_name"} Organization name:
-    = f.text_field :name
-  .form-group
-    %label{:for => "url"} Organization URL:
-    = f.text_field :url
+.form-group
+  %label{:for => "organization_name"} Organization name:
+  = f.text_field :name
+.form-group
+  %label{:for => "url"} Organization URL:
+  = f.text_field :url
 
-  = f.submit "Create", class: 'btn btn-defaul'
