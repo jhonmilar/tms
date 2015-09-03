@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   end
 
-  resources :organizations
+  resources :organizations do
+    resources :sub_organizations
+  end
 
   devise_scope :user do
     authenticated :user do

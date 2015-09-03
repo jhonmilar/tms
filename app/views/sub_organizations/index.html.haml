@@ -1,0 +1,11 @@
+%table.table
+  %thead
+    %tr
+      %th Domain Name
+  %tbody
+    - @sub_organizations.each do |sub_org|
+      %tr
+        %td
+          = sub_org.domain_name
+
+= link_to "Create new Sub Organization", new_organization_sub_organization_path(@organization)

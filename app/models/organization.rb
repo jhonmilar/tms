@@ -4,7 +4,8 @@ class Organization < ActiveRecord::Base
   has_many :sub_organizations, dependent: :destroy
 
   after_create :create_sub_organization
-
+  accepts_nested_attributes_for :sub_organizations, reject_if: proc { |attributes| attributes['domain_name'].blank? },
+                                                    allow_destroy: true
 
   private
     def create_sub_organization
