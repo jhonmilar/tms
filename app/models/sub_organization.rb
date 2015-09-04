@@ -4,4 +4,7 @@ class SubOrganization < ActiveRecord::Base
 
   belongs_to :organization
   has_many :routes
+
+  accepts_nested_attributes_for :routes, reject_if: proc { |attributes| attributes['name'].blank? },
+                                allow_destroy: true
 end

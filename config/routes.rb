@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :organizations do
-    resources :sub_organizations
+    resources :sub_organizations do
+      resources :cab_routes
+    end
   end
 
   devise_scope :user do
