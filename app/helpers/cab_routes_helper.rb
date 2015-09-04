@@ -1,0 +1,2 @@
+module CabRoutesHelper
+end

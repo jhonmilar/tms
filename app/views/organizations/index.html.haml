@@ -3,6 +3,7 @@
     %tr
       %th Name
       %th URL
+      %th Action
   %tbody
     - @organizations.each do |org|
       %tr
@@ -12,7 +13,7 @@
           = org.url
         %td
           = link_to "Edit", edit_organization_path(org.id)
-        %td
           = link_to "Delete", organization_path(org.id), :method => :delete
+          = link_to "Show Sub Organizations", organization_sub_organizations_path(org)
 
 = link_to "Create new Organization", new_organization_path

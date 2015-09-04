@@ -27,6 +27,7 @@ gem 'devise'
 gem 'haml'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "nested_form"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,7 @@
+= nested_form_for @sub_org, url:  organization_sub_organization_cab_routes_path(@sub_org.organization,@sub_org), method: 'POST' do |f|
+  = f.fields_for :routes do |route|
+    = route.text_field :name
+    = route.link_to_remove "Remove this task"
+  %p= f.link_to_add "Add a Sub Organization", :routes
+
+  = f.submit "Save", class: 'btn btn-defaul'

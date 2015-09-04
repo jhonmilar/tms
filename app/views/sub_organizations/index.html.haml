@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      %th Domain Name
+      %th Action
+  %tbody
+    - @sub_organizations.each do |sub_org|
+      %tr
+        %td
+          = sub_org.domain_name
+        %td
+          = link_to "See routes", organization_sub_organization_cab_routes_path(@organization, sub_org)
+
+= link_to "Create new Sub Organization", new_organization_sub_organization_path(@organization)
